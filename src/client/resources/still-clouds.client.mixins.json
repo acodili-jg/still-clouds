@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "io.github.acodili.jg.still_clouds.mixin.client",
+	"compatibilityLevel": "JAVA_17",
+	"client": [
+		"LevelRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

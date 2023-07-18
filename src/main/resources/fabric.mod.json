@@ -1,41 +1,45 @@
 {
-	"schemaVersion": 1,
-	"id": "modid",
-	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.ExampleModClient"
-		]
-	},
-	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+    "schemaVersion": 1,
+    "id": "still-clouds",
+    "version": "${version}",
+    "name": "Still Clouds",
+    "description": "A Minecraft mod that can make clouds stay still and more.",
+    "authors": [
+        "Jack Gabriel C. Acodili"
+    ],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/still-clouds",
+        "sources": "https://github.com/acodili-jg/still-clouds"
+    },
+    "license": "MIT",
+    "icon": "assets/still-clouds/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "io.github.acodili.jg.still_clouds.entrypoint.StillCloudsClientEntrypoint"
+        ],
+        "modmenu": [
+            "io.github.acodili.jg.still_clouds.entrypoint.StillCloudsModMenuEntrypoint"
+        ]
+    },
+    "accessWidener": "still-clouds.accesswidener",
+    "mixins": [
+        {
+            "config": "still-clouds.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+
+    "depends": {
+        "fabricloader": "*",
+        "minecraft": "*",
+        "java": ">=17"
+    },
+    "recommends": {
+        "fabricloader": "^0.14.21",
+        "minecraft": "^1.20.1",
+        "modmenu": "^7.1.0",
+        "java": "17",
+        "fabric-api": "^0.84.0"
+    }
 }
