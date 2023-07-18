@@ -71,6 +71,19 @@ jar {
     }
 }
 
+testing {
+    suites {
+        test {
+            useJUnitJupiter project.junit_jupiter_version
+
+            dependencies {
+                compileOnly sourceSets.client.compileClasspath
+                runtimeOnly sourceSets.client.runtimeClasspath
+            }
+        }
+    }
+}
+
 // configure the maven publication
 publishing {
     publications {
