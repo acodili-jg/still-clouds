@@ -76,10 +76,13 @@ testing {
         test {
             useJUnitJupiter project.junit_jupiter_version
 
+            sources {
+                compileClasspath += sourceSets.client.compileClasspath
+                runtimeClasspath += sourceSets.client.runtimeClasspath
+            }
+
             dependencies {
-                compileOnly sourceSets.client.compileClasspath
                 implementation sourceSets.client.output
-                runtimeOnly sourceSets.client.runtimeClasspath
             }
         }
     }
