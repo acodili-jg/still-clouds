@@ -3,7 +3,7 @@
     "id": "still-clouds",
     "version": "${version}",
     "name": "Still Clouds",
-    "description": "A Minecraft mod that can make clouds stay still and more.",
+    "description": "A Minecraft mod that can make clouds stay still, catch up smoothly, and more.",
     "authors": [
         "Jack Gabriel C. Acodili"
     ],
