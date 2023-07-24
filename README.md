@@ -2,6 +2,5 @@
 
 # Still Clouds
 
-A Minecraft mod that can make clouds stay still and more.
-
+A Minecraft mod that can make clouds stay still, catch up smoothly, and more.
 </div>
