@@ -73,7 +73,7 @@ jar {
 
 testing {
     suites {
-        test {
+        unitTest {
             useJUnitJupiter project.junit_jupiter_version
 
             sources {
