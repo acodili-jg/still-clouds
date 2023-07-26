@@ -10,21 +10,21 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Validate Gradle wrapper
+    - name: Validate Gradle Wrapper
       uses: gradle/wrapper-validation-action@v1
     - name: Set-up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: 17
         distribution: 'temurin'
-    - name: Make Gradle wrapper executable
+    - name: Make Gradle Wrapper Executable
       if: ${{ runner.os != 'Windows' }}
       run: chmod +x ./gradlew
       shell: bash
     - name: Build
       run: ./gradlew build
       shell: bash
-    - name: Capture build artifacts
+    - name: Capture Build Artifacts
       if: ${{ inputs.capture-artifacts }}
       uses: actions/upload-artifact@v3
       with:
