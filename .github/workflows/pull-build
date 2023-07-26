@@ -1,0 +1,11 @@
+name: Build on pull
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build and capture artifacts
+        uses: ./.github/actions/build
