@@ -5,7 +5,7 @@ plugins {
 }
 
 base.archivesName = project.archives_base_name
-version = "${project.mod_version}${System.env.MODRINTH_VERSION_METADATA}"
+version = "${project.mod_version}${System.env.MODRINTH_VERSION_MODIFIER}"
 group = project.maven_group
 
 repositories {
