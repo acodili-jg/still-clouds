@@ -1,5 +1,5 @@
 name: Build
-description: Builds the sources and captures the compile jar
+description: Builds and captures the compiled jar
 
 inputs:
   capture-artifacts:
