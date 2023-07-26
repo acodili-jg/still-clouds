@@ -73,7 +73,7 @@ jar {
 
 testing {
     suites {
-        val unitTest by registering(JvmTestSuite::class) {
+        unitTest, JvmTestSuite {
             useJUnitJupiter project.junit_jupiter_version
 
             sources {
