@@ -2,6 +2,11 @@ name: Manual upload
 on:
   workflow_dispatch:
     inputs:
+      version_modifier:
+        description: Version Suffix
+        required: false
+        default: ''
+        type: string
       version_type:
         description: Version type
         required: false
