@@ -95,14 +95,14 @@ modrinth {
 
     versionName = "Still Clouds ${project.version}"
     versionType = System.env.MODRINTH_VERSION_TYPE ?: 'release'
-    versionNumber = project.version
+    versionNumber = "project.version+${System.env.MODRINTH_VERSION_METADATA}"
 
-	changelog = System.env.MODRINTH_CHANGELOG ?: ''
-	dependencies {
+    changelog = System.env.MODRINTH_CHANGELOG ?: ''
+    dependencies {
         optional.project 'fabric-api'
     }
 
-	uploadFile = remapJar
+    uploadFile = remapJar
 }
 
 // configure the maven publication
