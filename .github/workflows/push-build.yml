@@ -8,4 +8,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Build and capture artifacts
-        uses: ./.github/actions/build
+        uses: ./.github/actions/build.yml
