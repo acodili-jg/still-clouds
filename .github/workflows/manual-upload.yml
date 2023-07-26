@@ -1,0 +1,33 @@
+name: Manual upload
+on:
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: Version type
+        required: false
+        default: release
+        type: choice
+        options:
+          - release
+          - beta
+          - alpha
+      changelog:
+        description: Changelog
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build and capture artifacts
+        uses: ./.github/actions/build
+      - name: Upload to Modrinth
+        run: ./gradlew modrinth
+        env:
+          MODRINTH_CHANGELOG: ${{ inputs.changelog }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          MODRINTH_VERSION_TYPE: ${{ inputs.version_type }}
