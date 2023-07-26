@@ -5,7 +5,7 @@ plugins {
 }
 
 base.archivesName = project.archives_base_name
-version = project.mod_version
+version = "${project.mod_version}${System.env.MODRINTH_VERSION_METADATA}"
 group = project.maven_group
 
 repositories {
@@ -95,7 +95,7 @@ modrinth {
 
     versionName = "Still Clouds ${project.version}"
     versionType = System.env.MODRINTH_VERSION_TYPE ?: 'release'
-    versionNumber = "project.version${System.env.MODRINTH_VERSION_METADATA}"
+    versionNumber = project.version
 
     changelog = System.env.MODRINTH_CHANGELOG ?: ''
     dependencies {
