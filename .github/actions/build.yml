@@ -10,8 +10,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
     - name: Validate Gradle wrapper
       uses: gradle/wrapper-validation-action@v1
     - name: Set-up JDK 17
