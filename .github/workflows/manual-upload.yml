@@ -35,4 +35,5 @@ jobs:
         env:
           MODRINTH_CHANGELOG: ${{ inputs.changelog }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          MODRINTH_VERSION_MODIFIER: ${{ inputs.version_modifier }}
           MODRINTH_VERSION_TYPE: ${{ inputs.version_type }}
