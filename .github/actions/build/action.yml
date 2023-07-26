@@ -20,8 +20,10 @@ runs:
     - name: Make Gradle wrapper executable
       if: ${{ runner.os != 'Windows' }}
       run: chmod +x ./gradlew
+      shell: bash
     - name: Build
       run: ./gradlew build
+      shell: bash
     - name: Capture build artifacts
       if: ${{ inputs.capture-artifacts }}
       uses: actions/upload-artifact@v3
