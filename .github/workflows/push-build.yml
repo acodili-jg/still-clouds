@@ -1,5 +1,5 @@
-name: build
-on: [pull_request, push]
+name: Build on push
+on: push
 
 jobs:
   build:
