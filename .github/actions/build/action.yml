@@ -17,14 +17,14 @@ runs:
       with:
         java-version: 17
         distribution: 'temurin'
-    - name: Make Gradle Wrapper Executable
+    - name: Make Gradle Wrapper executable
       if: ${{ runner.os != 'Windows' }}
       run: chmod +x ./gradlew
       shell: bash
     - name: Build
       run: ./gradlew build
       shell: bash
-    - name: Capture Build Artifacts
+    - name: Capture build artifacts
       if: ${{ inputs.capture-artifacts }}
       uses: actions/upload-artifact@v3
       with:
