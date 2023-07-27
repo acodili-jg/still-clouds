@@ -9,5 +9,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Build and capture artifacts
-        uses: ./.github/actions/build
+      - name: Publish
+        uses: ./.github/actions/publish
+        with:
+          changelog: Nightly build of `${{ env.GITHUB_REF }}`. View at https://github.com/acodili-jg/still-clouds/tree/${{ env.GITHUB_SHA }}
+          version_modifier: -nightly${{ env.GITHUB_SHA }}
+          version_type: alpha
