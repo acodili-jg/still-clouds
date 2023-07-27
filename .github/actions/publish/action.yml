@@ -1,0 +1,28 @@
+name: Publish
+description: Builds, captures, and publishes the compiled jar
+
+inputs:
+  version_modifier:
+    description: Version Suffix
+    required: false
+    default: ''
+  version_type:
+    description: Version type
+    required: false
+    default: release
+  changelog:
+    description: Changelog
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Build
+      uses: ./.github/actions/build
+    - name: Upload to Modrinth
+      run: ./gradlew modrinth
+      env:
+        MODRINTH_CHANGELOG: ${{ inputs.changelog }}
+        MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        MODRINTH_VERSION_MODIFIER: ${{ inputs.version_modifier }}
+        MODRINTH_VERSION_TYPE: ${{ inputs.version_type }}
