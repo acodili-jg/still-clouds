@@ -28,12 +28,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Build and capture artifacts
-        uses: ./.github/actions/build
-      - name: Upload to Modrinth
-        run: ./gradlew modrinth
-        env:
-          MODRINTH_CHANGELOG: ${{ inputs.changelog }}
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-          MODRINTH_VERSION_MODIFIER: ${{ inputs.version_modifier }}
-          MODRINTH_VERSION_TYPE: ${{ inputs.version_type }}
+      - name: Publish
+        uses: ./.github/actions/publish
+        with:
+          changelog: ${{ inputs.changelog }}
+          version_modifier: ${{ inputs.version_modifier }}
+          version_type: ${{ inputs.version_type }}
