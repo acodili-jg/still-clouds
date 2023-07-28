@@ -13,5 +13,6 @@ jobs:
         uses: ./.github/actions/publish
         with:
           changelog: Nightly build of `${{ env.GITHUB_REF }}`. View at https://github.com/acodili-jg/still-clouds/tree/${{ env.GITHUB_SHA }}
+          modrinth_token: ${{ secrets.MODRINTH_TOKEN }}
           version_modifier: -nightly${{ env.GITHUB_SHA }}
           version_type: alpha
