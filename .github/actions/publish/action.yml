@@ -13,6 +13,11 @@ inputs:
   changelog:
     description: Changelog
     required: false
+    default: ''
+  modrinth_token:
+    description: Modrinth Token
+    required: false
+    default: ''
 
 runs:
   using: composite
@@ -24,6 +29,6 @@ runs:
       shell: bash
       env:
         MODRINTH_CHANGELOG: ${{ inputs.changelog }}
-        MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        MODRINTH_TOKEN: ${{ inputs.modrinth_token }}
         MODRINTH_VERSION_MODIFIER: ${{ inputs.version_modifier }}
         MODRINTH_VERSION_TYPE: ${{ inputs.version_type }}
