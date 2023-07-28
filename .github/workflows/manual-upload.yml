@@ -32,5 +32,6 @@ jobs:
         uses: ./.github/actions/publish
         with:
           changelog: ${{ inputs.changelog }}
+          modrinth_token: ${{ secrets.MODRINTH_TOKEN }}
           version_modifier: ${{ inputs.version_modifier }}
           version_type: ${{ inputs.version_type }}
