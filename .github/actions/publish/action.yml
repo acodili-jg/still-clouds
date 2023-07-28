@@ -18,7 +18,7 @@ runs:
   using: composite
   steps:
     - name: Build
-      uses: .github/actions/build
+      uses: ./.github/actions/build
     - name: Upload to Modrinth
       run: ./gradlew modrinth
       shell: bash
