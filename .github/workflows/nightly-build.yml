@@ -12,7 +12,7 @@ jobs:
       - name: Publish
         uses: ./.github/actions/publish
         with:
-          changelog: Nightly build of `${{ env.GITHUB_REF }}`. View at https://github.com/acodili-jg/still-clouds/tree/${{ env.GITHUB_SHA }}
+          changelog: Nightly build of `${{ github.ref_name }}`. View at https://github.com/acodili-jg/still-clouds/tree/${{ github.sha }}
           modrinth_token: ${{ secrets.MODRINTH_TOKEN }}
-          version_modifier: -nightly${{ env.GITHUB_SHA }}
+          version_modifier: -nightly${{ github.sha }}
           version_type: alpha
